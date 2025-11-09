@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express();
 
+// *TODO: Day 01 - Introduction to ExpressJS
 // *! what is express?
 // express is a web app framework for nodejs
 // manages everything from receiving requests to giving the responses
