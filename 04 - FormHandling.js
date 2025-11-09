@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 
 // *! Session vs Cookies
-// Cookies are stored on the client-side (browser) and sent with every request to the server
-// Sessions are stored on the server-side and are identified by a unique session ID sent to the client via cookies
+// Cookies are stored on the client-side (browser) and sent with every request to the server.
+// Sessions are stored on the server-side and are identified by a unique session ID sent to the client via cookies.
 
 // ** data is sent to the server in two main formats:
 // 1. application/json
