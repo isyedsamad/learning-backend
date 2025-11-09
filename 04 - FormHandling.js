@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+// *todo: Day 02 - Form Handling
 // *! Session vs Cookies
 // Cookies are stored on the client-side (browser) and sent with every request to the server.
 // Sessions are stored on the server-side and are identified by a unique session ID sent to the client via cookies.
