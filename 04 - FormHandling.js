@@ -11,6 +11,6 @@ const app = express();
 // 2. application/x-www-form-urlencoded
 // *todo: we change our data to these formats because http is a stateless protocol and cannot handle complex data types directly.
 
-// *! Used to parse incoming request bodies
+// *! parsers: Used to parse incoming request bodies
 app.use(express.json()); // to parse JSON bodies, definitely needed for form handling
 app.use(express.urlencoded({ extended: true })); // to parse URL-encoded bodies, like form submissions
