@@ -1,40 +1,34 @@
-const express = require('express')
+const express = require("express");
 const app = express();
 
-// app.get(route, requestHandler)
-// here requestHandler is also a middlewaare function
+// *todo: Day 03 - EJS Templating Engine
+// *! what is EJS?
+// it's simple html with extra features like calculations, loops, conditions etc.
+// EJS (Embedded JavaScript) is a simple templating language that lets you generate HTML markup with plain JavaScript.
+// It helps to create dynamic web pages by embedding JavaScript code within HTML.
 
-// *! Basic Routing:
-// app.get('/', (req, res) => {
-//   res.send('Hello World from Samad!')
-// })
-// app.get("/profile", (req, res) => {
-//     res.send("This is the profile page");
-// })
-// app.listen(3000)
+// to work with file and directory paths
+const path = require('path');
 
-// *! Middleware: comes before routes in server setup
-// middleware is used if we want something to be done before reaching the route
-// * this .use will run for every request that comes to the server: it's a global middleware
-// app.use((req, res, next) => {
-//     console.log("Hello from middleware");
-//     next(); // to pass the control to the next middleware or route handler
-// })
-// app.get("/", (req, res) => {
-//     res.send("Hello World from Samad!");
-// })
-// app.listen(3000)
+// express js parser - to handle incoming request bodies
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// *! Error Handler
-app.get("/", (req, res, next) => {
-    return next(new Error("Something went wrong sir!"))
-    res.send("Hello World from Samad!");
-});
-// error handler: comes with the .use() method but with 4 parameters.
-// always at the end of all middlewares and routes.
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send("Something broke!");
-});
+// 0. to use static files like css, js, images
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(3000)
+// 1. install ejs from npm
+// 2. setup ejs as the view engine
+app.set("view engine", "ejs");
+// *! why set ejs as view engine?
+// so that express knows that we are using ejs as our templating engine
+// and it will look for .ejs files in the views folder by default
+
+// 3. create a views folder in the root directory
+// 4. create ejs files inside the views folder
+
+app.get("/", (req, res) => {
+    res.render("index"); // render the index.ejs file from views folder
+})
+
+app.listen(3000);
