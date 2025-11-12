@@ -27,8 +27,17 @@ app.set("view engine", "ejs");
 // 3. create a views folder in the root directory
 // 4. create ejs files inside the views folder
 
-app.get("/", (req, res) => {
-    res.render("index"); // render the index.ejs file from views folder
-})
+// app.get("/", (req, res) => {
+//     res.render("index"); // render the index.ejs file from views folder
+// })
 
-app.listen(3000);
+// app.listen(3000);
+
+// *! What is dinamic routing?
+// Dynamic routing refers to the ability to create routes that can handle variable parameters in the URL.
+// This allows you to create more flexible and reusable routes that can respond to different inputs without having to define each possible route explicitly.
+
+app.get("profile/:username", (req, res) => {
+    const user = req.params.username;
+    res.send(`Hello! {user}`);
+})
