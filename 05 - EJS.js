@@ -33,7 +33,7 @@ app.set("view engine", "ejs");
 
 // app.listen(3000);
 
-// *! What is dinamic routing?
+// *! What is dynamic routing?
 // Dynamic routing refers to the ability to create routes that can handle variable parameters in the URL.
 // This allows you to create more flexible and reusable routes that can respond to different inputs without having to define each possible route explicitly.
 

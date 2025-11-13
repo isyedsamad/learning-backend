@@ -1,44 +1,26 @@
-const express = require("express");
-const app = express();
+const fs = require('fs');
 
-// *todo: Day 03 - EJS Templating Engine
-// *! what is EJS?
-// it's simple html with extra features like calculations, loops, conditions etc.
-// EJS (Embedded JavaScript) is a simple templating language that lets you generate HTML markup with plain JavaScript.
-// It helps to create dynamic web pages by embedding JavaScript code within HTML.
-
-// to work with file and directory paths
-const path = require('path');
-
-// express js parser - to handle incoming request bodies
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// 0. to use static files like css, js, images
-app.use(express.static(path.join(__dirname, 'public')));
-
-// 1. install ejs from npm
-// 2. setup ejs as the view engine
-app.set("view engine", "ejs");
-// *! why set ejs as view engine?
-// so that express knows that we are using ejs as our templating engine
-// and it will look for .ejs files in the views folder by default
-
-// 3. create a views folder in the root directory
-// 4. create ejs files inside the views folder
-
-// app.get("/", (req, res) => {
-//     res.render("index"); // render the index.ejs file from views folder
+//! 1. writeFile - to write or create file
+//* fs.writeFile(filePath, data[options], callback fn)
+// fs.writeFile('fsModule/01File.txt', 'hey how is everything?', (err) => {
+//     if(err) console.log(err);
+//     else console.log('done!');
 // })
 
-// app.listen(3000);
+//! 2. appendFile - used to update the file with new data while keeping the data as it is.
+//* fs.appendFile(filePath, data[options], callback fn)
+// fs.appendFile('fsModule/01File.txt', ' mai badhiya hu!', (err) => {
+//     if(err) console.log(err);
+//     else console.log('done with append!');
+// })
 
-// *! What is dinamic routing?
-// Dynamic routing refers to the ability to create routes that can handle variable parameters in the URL.
-// This allows you to create more flexible and reusable routes that can respond to different inputs without having to define each possible route explicitly.
+// 3. copyFile
 
-app.get("/profile/:username", (req, res) => {
-    const user = req.params.username; // use to extract the username from the URL
-    res.send(`Hello! ${user}`);
+//! 4. rename - to rename the file
+//* fs.rename(oldName, newName, callback fn)
+fs.rename('fsModule/01File.txt', 'fsModule/01-File.txt', (err) => {
+    if(err) console.log(err);
+    else console.log('done with rename');
 })
-app.listen(3000);
+
+// 5. unlink
