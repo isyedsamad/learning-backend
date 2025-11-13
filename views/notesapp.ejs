@@ -20,6 +20,7 @@
         <div class="bg-zinc-800 rounded-md py-3 px-6 w-xs">
             <h2 class="font-semibold"><%= element %></h2>
             <a href="/notes/<%= element %>"><p class="font-semibold text-blue-400 text-sm cursor-pointer hover:text-blue-500 mt-1">Read more...</p></a>
+            <a href="/edit/<%= element %>"><p class="font-semibold text-gray-400 text-right text-sm cursor-pointer hover:text-gray-500 mt-1">Edit notes</p></a>
         </div>
         <% }) %>
         <% } else { %>

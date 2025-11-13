@@ -32,4 +32,25 @@ app.get('/notes/:title', (req, res) => {
     })
 })
 
+app.get('/edit/:title', (req, res) => {
+    const fileTitle = req.params.title;
+    fs.readFile(`./project-notes-app/${fileTitle}`, 'utf-8', (err, data) => {
+        if(err) console.log(err.message);
+        else {
+            const file = {
+                title: fileTitle,
+                notes: data
+            }
+            res.render('notesapp-edit', { file: file });
+        }
+    })
+})
+
+app.post('/edit-save/:title', (req, res) => {
+    fs.writeFile(`project-notes-app/${req.params.title}`, req.body.notes, (err) => {
+        if(err) console.log(err.message);
+        else res.redirect('/');
+    })
+})
+
 app.listen(3000);

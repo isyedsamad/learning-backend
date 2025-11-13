@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-zinc-900 text-white">
+    <div class="px-15 py-10">
+        <h1 class="text-xl font-semibold text-gray-300">Edit Notes</h1>
+        <form action="/edit-save/<%= file.title %>" method="post" class="flex flex-col gap-3 mt-5">
+        <input class="bg-zinc-800 px-5 py-2 rounded-md w-full" style="cursor: not-allowed;" placeholder="enter title here" name="title" value="<%= file.title %>" disabled>
+        <textarea class="bg-zinc-800 px-5 py-2 rounded-md w-full" placeholder="enter your notes here" name="notes"><%= file.notes %></textarea>
+        <input type="submit" class="bg-blue-600 rounded-md px-5 py-2 cursor-pointer hover:bg-blue-700" value="update notes">
+        </form>
+    </div>
+</body>
+</html>

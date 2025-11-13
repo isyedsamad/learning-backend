@@ -11,7 +11,8 @@
         <div class="bg-zinc-800 rounded-md py-3 px-6 w-full">
             <h2 class="font-semibold text-lg"><%= file.title %></h2>
             <p class="font-semibold text-blue-400 text-md cursor-pointer hover:text-blue-500 mt-1"><%= file.notes %></p>
-            <a href="/"><p class="font-semibold text-gray-400 mt-5 text-sm cursor-pointer hover:text-gray-500 mt-1">go back to home...</p></a>
+            <a href="/edit/<%= file.title %>"><p class="font-semibold text-green-400 mt-5 text-sm cursor-pointer hover:text-green-600 mt-1">Edit notes</p></a>
+            <a href="/"><p class="font-semibold text-gray-400 text-sm cursor-pointer hover:text-gray-500 mt-1">go back to home...</p></a>
         </div>
     </div>
 </body>
