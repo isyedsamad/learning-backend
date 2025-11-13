@@ -47,3 +47,10 @@ const fs = require('fs');
 //     if(err) console.log(err.message);
 //     else console.log('done with removing directory');
 // })
+
+//! 6. readFile - used to read the file
+//* fs.readFile(filePath[, options], callback fn)
+// fs.readFile('fsModule/01-File.txt', (err, data) => {
+//     if(err) console.log(err.message);
+//     else console.log(data);
+// })
