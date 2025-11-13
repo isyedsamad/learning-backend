@@ -37,7 +37,7 @@ const fs = require('fs');
 
 //! 5. rmdir / rm - used to remove directory/folder
 //* fs.rm(folderPath[, options], callback fn)
-//todo: without options we can only delete empty dir
+//todo: without options we can only delete empty directory
 // fs.rmdir('./copy/', (err) => {
 //     if(err) console.log(err.message);
 //     else console.log('done with removing directory');
