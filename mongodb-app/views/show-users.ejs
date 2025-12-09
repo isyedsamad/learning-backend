@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="stylesheets/style.css" >
+</head>
+<body class="w-full h-full">
+    <div class="w-full h-full bg-zinc-900 p-10">
+        <div class="w-full">
+            <div>
+                <a href="/"><p class="text-xs font-semibold text-gray-400 mb-3">back to home!</p></a>
+            </div>
+            <h2 class="text-white font-semibold text-xl mb-5">Users List</h2>
+            <div class="flex flex-wrap gap-3">
+                <% users.forEach(element => { %>
+                    <div class="bg-zinc-800 w-72 rounded-xl px-5 py-4 flex flex-col gap-1">
+                        <div class="bg-zinc-700 rounded-md w-full h-50 overflow-hidden">
+                            <img class="w-full h-full object-cover object-top" src="<%= element.image %>">
+                        </div>
+                        <h2 class="font-semibold text-white text-md mt-2"><%= element.name %></h2>
+                        <p class="font-semibold text-gray-400 text-xs">@<%= element.username %></p>
+                        <div class="mt-2 flex gap-2">
+                            <button class="px-4 py-1 bg-zinc-900 rounded-md text-white text-xs font-semibold cursor-pointer">Edit</button>
+                            <a href="/delete-user/<%= element._id %>">
+                                <button class="px-4 py-1 bg-red-900 rounded-md text-white text-xs font-semibold cursor-pointer">Delete</button>
+                            </a>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
